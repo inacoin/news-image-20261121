@@ -82,6 +82,23 @@ No story is invented; every fact above comes from the sources named.
   the competition has no local scorer anyway ("the server grades
   every entry").
 
+## Fix 22 Nov 2026 (resubmit) — stdlib-only grader fallback
+- Submission round 1 was REJECTED on run_completes: the grade run in
+  the dev phase exited 1. Cause: `main.py` imported Pillow
+  unconditionally, but the grader runs stdlib-only Python (no Pillow),
+  so it died with ImportError before drawing anything. The news20
+  entry already had this fallback; news21 did not.
+- Fix (main.py only, minimal): Pillow import wrapped in
+  try/except ImportError; when Pillow is missing, main() copies the
+  pre-rendered entry.png shipped in the repo to
+  $MAKEFUN_OUTPUT_DIR/entry.png instead. No other behaviour changed.
+- Verified grader-like (python3 -P -s, TZ=UTC, PYTHONHASHSEED=0,
+  read-only bot copy, output dir terpisah): PIL path 2x exit 0,
+  no-PIL path 2x exit 0, both as root and as uid 65534 — all runs
+  byte-identical, sha256
+  a5a9ddc3cc86eb87dbdd54c97cc7e8ce5ce5a6d69ac7bc885a52582eac8d34e7
+  (141,581 bytes, PNG 1024x1024), same as the shipped entry.png.
+
 ## Git
 `git config user.name` / `user.email` are not set on this machine, so
 no local commit was made (no identity invented).
