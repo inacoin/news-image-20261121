@@ -99,6 +99,42 @@ No story is invented; every fact above comes from the sources named.
   a5a9ddc3cc86eb87dbdd54c97cc7e8ce5ce5a6d69ac7bc885a52582eac8d34e7
   (141,581 bytes, PNG 1024x1024), same as the shipped entry.png.
 
+## Round 3 — 22 Nov 2026 (rank push; resubmit before 23 Nov 07:00 WIB)
+- Round 2 scored judge ~0.977 (11W-1D-0L) but provisional rank #1.185
+  of 9.446 — top 50 paid needs ~98.8%. Lusi chose to push this entry
+  (with GTA 6) to raise the rank.
+- Visual/content weaknesses found by reading the round-2 render:
+  (1) hero panel: the moon was sliced by the caption bar, the bridge
+  was nearly invisible (dark on dark), no skyline; (2) no data
+  visualisation anywhere; (3) news only covered up to midday UTC.
+- Changes in main.py (fallback behaviour unchanged):
+  - Hero panel rebuilt: moon moved below the caption bar (whole disc,
+    with craters), a lit-window city skyline on the far bank, bridge in
+    lighter steel with deck lamps, bigger explosion with smoke puffs
+    and sparks, a fourth missile streak, more stars.
+  - Markets cell gains a mini horizontal bar chart (S&P 500 -3.7%,
+    Nasdaq -5.3%, Nikkei -5.1%) under a shortened body.
+  - Top story now covers the Saturday developments: Poland invokes
+    NATO Article 4, alliance council meets Monday (AP/Reuters/The
+    Times, 21 Nov); two Kh-101 missiles + one jet drone at Nowy
+    Lipowiec, Rudnik nad Sanem, Molodycz.
+  - Climate body updated: talks run into Saturday night, draft omits
+    fossil fuels, EU's Hoekstra warns "a good deal or no deal"
+    (Reuters, 21 Nov 14:36 UTC). No deal had been reached by Saturday
+    evening, so the headline stays "deadlocked in overtime".
+  - ALSO TODAY: UK-EU deals swapped out for the Kryvyi Rih
+    'double-tap' strike (boy of 7 and a young paramedic killed, ~60
+    hurt — Kyiv Independent / The Independent, 21 Nov).
+  - Footer now reads "up to 21:00 UTC" (was midday UTC).
+  - Layout: story cells 158 -> 166 px tall, rows tightened so the
+    chart fits; no text clipped or overlapping (verified visually).
+- No new font glyphs needed: every new character (&, ', digits) was
+  already in the subset fonts (see subset_fonts.py CHARS).
+- Verified: two runs byte-identical, sha256
+  ff9a76cf3e1fa6814090dbff70f65dda4e21225f04c7a25176b352112a289344
+  (153,040 bytes, PNG 1024x1024). Shipped entry.png replaced with the
+  new render so the no-Pillow fallback serves the new image too.
+
 ## Git
 `git config user.name` / `user.email` are not set on this machine, so
 no local commit was made (no identity invented).
