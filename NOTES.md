@@ -135,43 +135,6 @@ No story is invented; every fact above comes from the sources named.
   (153,040 bytes, PNG 1024x1024). Shipped entry.png replaced with the
   new render so the no-Pillow fallback serves the new image too.
 
-## Round 4 — 22 Nov 2026 (REDESIGN BESAR; resubmit sebelum 23 Nov 07:00 WIB)
-- Round 3 scored judge ~0.978 (12W-0D-0L), hanya +0.001 dari round 2
-  (0.977) — masih di bawah ~0.988 yang dibutuhkan top 50. Lusi memberi
-  autopilot: lakukan yang terbaik, yang penting menang.
-- Diagnosis: round 1-3 adalah koran broadsheet yang sopan — hero kecil
-  dan terpisah, masthead tanggal justru jadi teks terbesar di halaman,
-  dan latar krem polos di mana-mana. Di thumbnail, di antara ratusan
-  entry koran serupa, gambar ini tidak menonjol.
-- Redesign total (bukan poles): halaman dibangun ulang sebagai poster
-  breaking-news full-bleed. Separuh atas (0-468 px) adalah satu adegan
-  malam selebar halaman: gradien langit, bulan besar, 5 streak rudal,
-  skyline dua tepi dengan jendela menyala, sungai + 3 jembatan lengkung,
-  ledakan besar di atas jembatan tengah — dengan headline putih raksasa
-  "Russian missiles / land in Poland" (66 px) dan deck di atasnya.
-  Nameplate + tanggal dipindah ke strip tipis di dalam hero.
-- Baru: strip "THE DAY IN NUMBERS" (navy, full-bleed) dengan 5 angka
-  besar: 400+ drone, 110+ rudal, 3 jembatan kena di Kyiv, 6.8 gempa,
-  -5.3% Nasdaq. Grid 2x2 empat cerita dipertahankan (dengan grafik
-  batang Markets) tapi lebih padat; ALSO TODAY dan footer tetap.
-- Fakta baru terverifikasi via web (22 Nov): Rutte di Warsawa Sabtu —
-  "NATO will defend every inch of Polish territory" (Reuters, 21 Nov);
-  Polandia minta F-35 + AWACS di bawah Operation Eastern Sentry;
-  COP31 masih deadlock Sabtu malam, EU menolak deal lemah, bisa berakhir
-  tanpa kesepakatan pertama kali sejak COP6 (2000). Footer tetap
-  "up to 21:00 UTC" — semua fakta sudah publik sebelum itu.
-- Perbaikan visual dari render pertama: dua tofu box (kutip tunggal
-  kiri U+2018 tidak ada di subset font — diganti ASCII ' seperti
-  round 3); halo lingkaran cokelat di sekitar ledakan dihapus, diganti
-  starburst lebih besar; streak kiri atas digeser supaya tidak menabrak
-  pill kicker.
-- Verifikasi: 2 run byte-identik, sha256
-  a9c0bb42871b914384bf29ce8564e65bd3f5633268f04921dbd6605ea679cd02
-  (136.788 byte, PNG 1024x1024, di bawah batas 1 MiB). Jalur tanpa
-  Pillow (simulasi grader stdlib-only) menghasilkan file yang sama
-  persis — fallback aman. Dicek visual: tidak ada teks terpotong,
-  bertabrakan, atau tofu.
-
 ## Git
 `git config user.name` / `user.email` are not set on this machine, so
 no local commit was made (no identity invented).
